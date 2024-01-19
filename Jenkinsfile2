@@ -9,7 +9,7 @@ pipeline {
             steps{
                 withSonarQubeEnv('Sonarserver'){ 
               sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Abz1996_Mav-165'
-             // sh 'mvn sonar:sonar'
+              sh 'mvn sonar:sonar'
             }
             }
         }
