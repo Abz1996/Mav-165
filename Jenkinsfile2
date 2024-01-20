@@ -5,7 +5,8 @@ pipeline {
     }
     environment {
         SONAR_SCANNER_VERSION = '5.0.1.3006' // Replace with your SonarQube Scanner version
-        JAVA_HOME = tool '11_0_22' // Replace 'JDK8' with the name of your JDK tool installation
+        JAVA_HOME = tool 'JDK11' // Replace 'JDK8' with the name of your JDK tool installation
+      PATH = "/usr/lib/jvm/java-11-amazon-corretto.x86_64"
     }
     stages{
         stage('sonarqube scan'){
