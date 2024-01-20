@@ -3,13 +3,7 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-    environment {
-        SONAR_SCANNER_VERSION = '5.0.1.3006' // Replace with your SonarQube Scanner version
-        JDK_TOOL_NAME = 'JDK11_0_22' // Custom tool name for Java 11.0.22
-        JAVA_HOME = tool JDK_TOOL_NAME
-        PATH = "/usr/lib/jvm/java-11-amazon-corretto.x86_64"
-    
-    }
+
     stages{
         stage('sonarqube scan'){
            
