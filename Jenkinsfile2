@@ -3,7 +3,22 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-
+ stages {
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    // Set SonarQube Scanner properties
+                    withSonarQubeEnv('Sonarserver') {
+                        sh '''
+                            sonar-scanner \
+                            -Dsonar.scanner.force-deprecated-java-version=true
+                        '''
+                    }
+                }
+            }
+        }
+    }
+}
     stages{
         stage('sonarqube scan'){
            
